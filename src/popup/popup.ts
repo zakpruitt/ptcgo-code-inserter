@@ -3,12 +3,15 @@ document.getElementById('start')?.addEventListener('click', () => {
         .split('\n')
         .filter(code => code.trim() !== '');
 
+    const status = document.getElementById('status') as HTMLParagraphElement;
     if (codes.length > 0) {
         chrome.storage.local.set({ codes: codes }, () => {
             chrome.runtime.sendMessage({ action: 'startAutomation' });
         });
+        // codes.forEach((code) => {
+        //     status.textContent += code + '\n';
+        // })
     } else {
-        const status = document.getElementById('status') as HTMLParagraphElement;
         status.textContent = 'Please enter some codes!';
     }
 });

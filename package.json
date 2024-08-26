@@ -4,12 +4,14 @@
   "description": "insert codez",
   "main": "index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc && npm run copyfiles",
+    "copyfiles": "copyfiles -u 1 src/popup/*.html src/popup/*.css dist/"
   },
   "author": "Zak Pruitt",
   "license": "ISC",
   "devDependencies": {
     "@types/chrome": "^0.0.270",
+    "copyfiles": "^2.4.1",
     "typescript": "^5.5.4"
   }
 }
