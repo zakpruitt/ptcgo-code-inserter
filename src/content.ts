@@ -35,10 +35,10 @@ chrome.storage.local.get('codes', data => {
 
             if (currentIndex % batchSize === 0 || currentIndex >= codes.length) {
                 // After every batch of 10 codes or at the end of the list, click the redeem button
-                setTimeout(clickRedeemButton, 2000); // Delay before clicking the redeem button
+                setTimeout(clickRedeemButton, 1500); // Delay before clicking the redeem button
             } else {
                 // Wait a bit before submitting the next code to avoid overwhelming the server
-                setTimeout(enterAndSubmitCodes, 2000); // 2-second delay between submissions
+                setTimeout(enterAndSubmitCodes, 1500);
             }
         } else {
             console.error('Input field or submit button not found.');
@@ -56,7 +56,7 @@ chrome.storage.local.get('codes', data => {
             }));
 
             // Continue with the next batch after a delay
-            setTimeout(enterAndSubmitCodes, 5000); // 5-second delay to wait for the redemption to process
+            setTimeout(enterAndSubmitCodes, 15000); // 15-second delay to wait for the redemption to process
         } else {
             console.error('Redeem button not found or disabled.');
             // Retry clicking the redeem button after a delay if it's disabled or not found
