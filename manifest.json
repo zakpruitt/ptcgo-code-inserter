@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Pokémon Code Entry Automation",
+  "version": "1.0",
+  "description": "Automatically enter and submit Pokémon codes in batches.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "background": {
+    "service_worker": "dist/background.js"
+  },
+  "action": {
+    "default_popup": "dist/popup/popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.pokemon.com/*"],
+      "js": ["dist/content.js"]
+    }
+  ]
+}

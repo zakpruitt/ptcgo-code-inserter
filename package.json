@@ -4,15 +4,12 @@
   "description": "insert codez",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "ts-node src/index.ts"
+    "build": "tsc"
   },
   "author": "Zak Pruitt",
   "license": "ISC",
   "devDependencies": {
-    "playwright": "^1.46.1",
-    "ts-node": "^10.9.2",
+    "@types/chrome": "^0.0.270",
     "typescript": "^5.5.4"
   }
 }
